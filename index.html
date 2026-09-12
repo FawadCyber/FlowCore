@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth"><head><meta name="description" content="FlowCore builds custom automations, packages them into SaaS products, and delivers ready-to-use apps. Discuss your project on WhatsApp or email."><meta name="theme-color" content="#030303"><link rel="icon" href="flowcore-icon.svg?v=2" type="image/svg+xml">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlowCore | Automations, SaaS & Apps</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #030303;
+color: #ffffff;
+overflow-x: hidden;
+}
+.font-mono {
+font-family: 'JetBrains Mono', monospace;
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+/* Gradients & Text */
+.text-gradient {
+background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+/* Advanced Animations */
+@keyframes blob-bounce {
+0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+25% { transform: translate(20px, -30px) scale(1.1); opacity: 0.5; }
+50% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.3; }
+75% { transform: translate(30px, 30px) scale(1.05); opacity: 0.4; }
+}
+@keyframes flow-beam {
+0% { stroke-dashoffset: 1000; }
+100% { stroke-dashoffset: 0; }
+}
+@keyframes pulse-node {
+0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4); }
+70% { box-shadow: 0 0 0 10px rgba(168, 85, 247, 0); }
+100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+}
+@keyframes marquee {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.animate-blob { animation: blob-bounce 10s infinite ease-in-out; }
+.animate-beam { stroke-dasharray: 10 5; animation: flow-beam 20s linear infinite; }
+.animate-pulse-node { animation: pulse-node 2s infinite; }
+.animate-marquee { animation: marquee 40s linear infinite; }
+.animate-float { animation: blob-bounce 6s infinite ease-in-out; }
+/* Glassmorphism */
+.glass-card {
+background: rgba(20, 20, 20, 0.4);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+.glass-nav {
+background: rgba(3, 3, 3, 0.7);
+backdrop-filter: blur(20px);
+border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* Dynamic Grid */
+.bg-grid-animated {
+background-size: 50px 50px;
+background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+/* Scroll Reveal Classes */
+.reveal {
+opacity: 0;
+transform: translateY(30px) scale(0.95);
+transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+/* Code Editor Syntax Highlighting Mock */
+.code-keyword { color: #c678dd; }
+.code-func { color: #61afef; }
+.code-string { color: #98c379; }
+.code-plain { color: #abb2bf; }
+</style>
+<style>.contact-input{display:block;width:100%;margin-top:.5rem;padding:.8rem 1rem;background:#191919;border:1px solid #333;border-radius:.65rem;color:white;font:inherit;min-width:0}.contact-input:focus{outline:2px solid #a855f7;outline-offset:2px}a:focus-visible,button:focus-visible{outline:2px solid #c084fc;outline-offset:5px}section[id]{scroll-margin-top:80px}#mobile-menu[aria-hidden="true"]{visibility:hidden}#mobile-menu[aria-hidden="false"]{visibility:visible}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.aura-background-component{display:none}}</style><style>.flowcore-home{display:block;flex-shrink:0}.flowcore-brand{display:block;width:205px;height:57px;overflow:hidden}@media(max-width:767px){.flowcore-brand{width:175px;height:48px}}</style></head>
+<body class="selection:bg-purple-500/30 selection:text-purple-200 relative">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Background (component) added by Aura -->
+<div class="aura-background-component fixed top-0 w-full h-screen -z-10" data-alpha-mask="80" style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"><div class="aura-background-component top-0 w-full h-screen -z-10 absolute" data-alpha-mask="100" style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 100%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 100%, transparent)">
+  <div data-us-project="ZPruWnhzwuk5Tf6nc1q0" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+  <script type="text/javascript">
+    !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+  </script>
+</div></div>
+
+    <!-- Ambient Live Background -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-purple-900/20 blur-[80px] md:blur-[100px] animate-blob"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-blue-900/20 blur-[80px] md:blur-[100px] animate-blob" style="animation-delay: 2s"></div>
+        <div class="absolute top-[40%] left-[40%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] rounded-full bg-fuchsia-900/10 blur-[80px] md:blur-[120px] animate-blob" style="animation-delay: 4s"></div>
+        <div class="absolute inset-0 bg-grid-animated opacity-50"></div>
+    </div>
+
+    <svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><filter id="remove-logo-black" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  4 4 4 0 -0.18"/></filter></defs></svg><!-- Navigation -->
+    <nav class="fixed z-50 glass-nav transition-all duration-300 w-full top-0">
+      <div class="md:h-20 flex h-16 max-w-7xl mr-auto ml-auto pr-6 pl-6 items-center justify-between">
+        <a href="#" class="flowcore-home" aria-label="FlowCore home"><svg class="flowcore-brand" viewBox="150 125 1780 490" role="img" aria-label="FlowCore"><image href="flowcore-brand.png" width="2071" height="759" filter="url(#remove-logo-black)"/></svg></a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
+          <a href="#solutions" class="px-5 py-2 text-xs font-medium text-zinc-400 hover:text-white rounded-full hover:bg-white/5 transition-all">Solutions</a>
+          <a href="#stack" class="px-5 py-2 text-xs font-medium text-zinc-400 hover:text-white rounded-full hover:bg-white/5 transition-all">Stack</a>
+          <a href="#pricing" class="px-5 py-2 text-xs font-medium text-zinc-400 hover:text-white rounded-full hover:bg-white/5 transition-all">Packages</a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:flex items-center gap-4">
+           <a href="https://wa.me/923492971884?text=Hi%20FlowCore!%20I%20would%20like%20to%20discuss%20an%20automation%20project." target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-white text-black rounded-full text-xs font-bold hover:bg-zinc-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-105">
+            Start Your Project
+          </a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden text-white hover:text-purple-400 transition-colors">
+          <iconify-icon icon="solar:hamburger-menu-linear" width="28"></iconify-icon>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" aria-hidden="true" class="fixed inset-0 z-50 bg-[#030303]/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center gap-8">
+        <button id="close-menu" aria-label="Close menu" class="absolute top-6 right-6 text-zinc-400 hover:text-white p-2">
+            <iconify-icon icon="solar:close-circle-linear" width="32"></iconify-icon>
+        </button>
+        
+        <div class="flex flex-col items-center gap-6 text-center">
+            <a href="#solutions" class="mobile-link text-2xl font-light text-white hover:text-purple-400 transition-colors">Solutions</a>
+            <a href="#stack" class="mobile-link text-2xl font-light text-white hover:text-purple-400 transition-colors">Stack</a>
+            <a href="#pricing" class="mobile-link text-2xl font-light text-white hover:text-purple-400 transition-colors">Packages</a>
+        </div>
+
+        <a href="https://wa.me/923492971884?text=Hi%20FlowCore!%20I%20would%20like%20to%20discuss%20an%20automation%20project." target="_blank" rel="noopener noreferrer" class="mobile-link mt-8 px-8 py-4 bg-white text-black rounded-full text-sm font-bold shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+            Start Your Project
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="overflow-hidden md:pb-32 md:pt-44 pt-32 pb-20 relative">
+      <div class="z-10 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
+        
+        <!-- Text Content -->
+        <div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-20 reveal active">
+          <div class="inline-flex gap-2 text-[10px] font-bold text-purple-300 tracking-widest bg-purple-500/10 border-purple-500/20 border rounded-full mb-6 pt-1 pr-3 pb-1 pl-3 shadow-[0_0_15px_rgba(168,85,247,0.2)] backdrop-blur-sm gap-x-2 gap-y-2 items-center">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
+            AUTOMATION &amp; AI
+          </div>
+          
+          <h1 class="text-4xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
+            We Build <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Intelligent</span><br>
+            Automation Apps.
+          </h1>
+          
+          <p class="text-base md:text-lg text-zinc-400 leading-relaxed mb-10 max-w-xl mx-auto px-4">
+            We build your automation, package it into a SaaS product, and deliver it as an app. 
+            From a repetitive task to a product your team or customers can use.
+          </p>
+
+          <div class="flex flex-col w-full sm:w-auto sm:flex-row gap-4 px-4">
+            <a class="px-8 py-4 bg-white text-black rounded-full text-sm font-bold hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2" href="https://wa.me/923492971884?text=Hi%20FlowCore!%20I%20would%20like%20to%20discuss%20an%20automation%20project." target="_blank" rel="noopener noreferrer" style="text-align:center;display:flex;align-items:center;justify-content:center">
+              <iconify-icon icon="solar:bolt-linear" width="18"></iconify-icon>
+              Chat on WhatsApp
+            </a>
+            <a class="px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full text-sm font-bold hover:bg-white/10 transition-colors backdrop-blur-sm flex items-center justify-center gap-2" href="https://mail.google.com/mail/?view=cm&fs=1&to=fawadnaseem28%40gmail.com&su=FlowCore%20%E2%80%94%20Project%20Inquiry">
+              Email Your Project
+            </a>
+          </div>
+        </div>
+
+        <!-- COMPLEX VISUALIZATION: Code + Visual Workflow -->
+        <div class="relative w-full max-w-6xl mx-auto mt-12 reveal px-2 md:px-0 active">
+          <!-- Main Container -->
+          <div class="glass-card rounded-2xl border border-white/10 overflow-hidden shadow-2xl relative bg-[#050505]/80">
+            
+            <!-- Toolbar -->
+            <div class="h-12 border-b border-white/5 bg-black/40 flex items-center px-4 justify-between">
+              <div class="flex gap-2">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+              </div>
+              <div class="hidden sm:flex items-center gap-6 text-[10px] font-mono text-zinc-500">
+                <div class="flex items-center gap-1.5 px-3 py-1 rounded bg-white/5 text-zinc-300 border-t border-purple-500/50">
+                  <iconify-icon icon="solar:code-file-linear"></iconify-icon> Logic.tsx
+                </div>
+                <div class="flex items-center gap-1.5 hover:text-zinc-300 cursor-pointer transition-colors">
+                  <iconify-icon icon="solar:tuning-square-2-linear"></iconify-icon> config
+                </div>
+              </div>
+              <div class="text-[10px] text-zinc-600 font-mono">v2.4.0 (Live)</div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 min-h-[350px] md:min-h-[450px]">
+              
+              <!-- LEFT: Code / Design Side -->
+              <div class="hidden lg:block border-r border-white/5 p-6 md:p-8 font-mono text-xs md:text-sm leading-relaxed relative overflow-hidden bg-[#0a0a0a]">
+                <div class="absolute top-0 right-0 p-4 opacity-20">
+                    <iconify-icon icon="solar:bolt-linear" width="64"></iconify-icon>
+                </div>
+                
+                <!-- Typing Code Simulation -->
+                <div class="space-y-1">
+                  <div class="flex"><span class="text-zinc-600 mr-4 select-none">1</span><span class="code-keyword">import</span> <span class="code-plain">{</span> <span class="code-func">automations</span> <span class="code-plain">}</span> <span class="code-keyword">from</span> <span class="code-string">'@/lib/ai-core'</span>;</div>
+                  <div class="flex"><span class="text-zinc-600 mr-4 select-none">2</span></div>
+                  <div class="flex"><span class="text-zinc-600 mr-4 select-none">3</span><span class="code-keyword">export default async function</span> <span class="code-func">ProcessLead</span><span class="code-plain">(</span><span class="code-plain">data</span><span class="code-plain">) {</span></div>
+                  <div class="flex"><span class="text-zinc-600 mr-4 select-none">4</span><span class="pl-4 code-plain">  </span><span class="code-keyword">const</span> <span class="code-plain">aiAnalysis = </span><span class="code-keyword">await</span> <span class="code-plain">openai.</span><span class="code-func">analyze</span><span class="code-plain">(data);</span></div>
+                  <div class="flex"><span class="text-zinc-600 mr-4 select-none">5</span></div>
+                  <div class="flex"><span class="text-zinc-600 mr-4 select-none">6</span><span class="pl-4 code-keyword">if</span> <span class="code-plain">(aiAnalysis.score &gt; </span><span class="code-string">80</span><span class="code-plain">) {</span></div>
+                  <div class="flex bg-purple-500/10 -mx-8 px-8 border-l-2 border-purple-500"><span class="text-zinc-600 mr-4 select-none">7</span><span class="pl-8 code-keyword">await</span> <span class="code-func">triggerWorkflow</span><span class="code-plain">({</span></div>
+                  <div class="flex bg-purple-500/10 -mx-8 px-8 border-l-2 border-purple-500"><span class="text-zinc-600 mr-4 select-none">8</span><span class="pl-12 code-plain">platform: </span><span class="code-string">'n8n'</span><span class="code-plain">,</span></div>
+                  <div class="flex bg-purple-500/10 -mx-8 px-8 border-l-2 border-purple-500"><span class="text-zinc-600 mr-4 select-none">9</span><span class="pl-12 code-plain">webhook: </span><span class="code-string">'/hooks/high-value'</span></div>
+                  <div class="flex bg-purple-500/10 -mx-8 px-8 border-l-2 border-purple-500"><span class="text-zinc-600 mr-4 select-none">10</span><span class="pl-8 code-plain">});</span></div>
+                  <div class="flex"><span class="text-zinc-600 mr-4 select-none">11</span><span class="pl-4 code-plain">}</span></div>
+                  <div class="flex"><span class="text-zinc-600 mr-4 select-none">12</span><span class="code-plain">}</span><span class="animate-pulse inline-block w-2 h-4 bg-purple-400 align-middle ml-1"></span></div>
+                </div>
+
+                <!-- Floating Badge -->
+                <div class="absolute bottom-6 left-6 px-3 py-1.5 rounded bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[10px] font-bold flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                  Automation Execution
+                </div>
+              </div>
+
+              <!-- RIGHT: Visual Automation (Canvas) -->
+              <div class="relative bg-[#050505] p-6 overflow-hidden flex items-center justify-center min-h-[300px]">
+                <!-- Background Dots -->
+                <div class="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+                
+                <!-- Connection SVG Layer -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none z-0">
+                  <defs>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.2"></stop>
+                      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0.8"></stop>
+                    </linearGradient>
+                  </defs>
+                  
+                  <path d="M120 100 C 180 100, 180 225, 250 225" fill="none" stroke="url(#lineGradient)" stroke-width="2"></path>
+                  <path d="M250 225 C 320 225, 320 150, 400 150" fill="none" stroke="#333" stroke-width="2"></path>
+                  <path d="M250 225 C 320 225, 320 300, 400 300" fill="none" stroke="#333" stroke-width="2"></path>
+
+                  <!-- Animated Beams -->
+                  <circle r="4" fill="#a855f7">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M120 100 C 180 100, 180 225, 250 225"></animateMotion>
+                  </circle>
+                  <circle r="4" fill="#fff" opacity="0.5">
+                    <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M250 225 C 320 225, 320 150, 400 150"></animateMotion>
+                  </circle>
+                </svg>
+
+                <!-- Nodes (Responsive Position via CSS Transforms/Absolute) -->
+                <!-- Start Node -->
+                <div class="absolute top-[20%] left-[10%] md:top-[80px] md:left-[60px] z-10">
+                  <div class="w-12 h-12 rounded-xl bg-[#0F0F0F] border border-blue-500/30 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.2)] animate-float">
+                     <iconify-icon icon="solar:notification-lines-remove-linear" class="text-blue-400 text-xl"></iconify-icon>
+                  </div>
+                </div>
+
+                <!-- Central Processing Node -->
+                <div class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 animate-float" style="animation-delay: 1s">
+                  <div class="w-14 h-14 rounded-xl bg-[#1a0b2e] border border-purple-500 flex items-center justify-center shadow-[0_0_30px_rgba(168,85,247,0.4)] animate-pulse-node">
+                     <iconify-icon icon="simple-icons:openai" class="text-purple-400 text-2xl"></iconify-icon>
+                  </div>
+                </div>
+
+                <!-- End Node 1 -->
+                <div class="absolute top-[30%] right-[10%] md:top-[130px] md:right-[40px] z-10 animate-float" style="animation-delay: 1.5s">
+                   <div class="w-12 h-12 rounded-xl bg-[#0F0F0F] border border-zinc-800 flex items-center justify-center shadow-lg">
+                     <iconify-icon icon="solar:server-linear" class="text-zinc-300 text-xl"></iconify-icon>
+                   </div>
+                </div>
+
+                <!-- End Node 2 -->
+                <div class="absolute top-[70%] right-[10%] md:top-[280px] md:right-[40px] z-10 animate-float" style="animation-delay: 2s">
+                   <div class="w-12 h-12 rounded-xl bg-[#0F0F0F] border border-zinc-800 flex items-center justify-center shadow-lg">
+                     <iconify-icon icon="simple-icons:slack" class="text-green-400 text-xl"></iconify-icon>
+                   </div>
+                </div>
+
+                <!-- Status Pill -->
+                 <div class="absolute top-4 right-4 px-2 py-1 bg-green-500/10 border border-green-500/20 rounded text-[9px] font-bold text-green-400 flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                  RUNNING
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infinite Scrolling Stack -->
+    <section class="border-y overflow-hidden border-white/5 pt-10 pb-10" id="stack">
+      <div class="flex w-full">
+        <div class="flex items-center gap-16 animate-marquee whitespace-nowrap min-w-full pl-16">
+          <!-- Item Set 1 -->
+          <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-default">
+            <iconify-icon icon="solar:bolt-linear" class="text-2xl"></iconify-icon>
+            <span class="font-bold text-lg">Workflows</span>
+          </div>
+          <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-default">
+            <iconify-icon icon="solar:server-path-linear" class="text-2xl"></iconify-icon>
+            <span class="font-bold text-lg">APIs</span>
+          </div>
+          <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-default">
+            <iconify-icon icon="simple-icons:n8n" class="text-2xl"></iconify-icon>
+            <span class="font-bold text-lg">n8n</span>
+          </div>
+          <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-default">
+            <iconify-icon icon="simple-icons:openai" class="text-2xl" width="24" height="24" style="color: rgb(255, 255, 255);"></iconify-icon>
+            <span class="font-bold text-lg">OpenAI</span>
+          </div>
+          <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-default">
+             <iconify-icon icon="solar:widget-linear" class="text-2xl" width="24" height="24" style="color: rgb(255, 255, 255);"></iconify-icon>
+            <span class="text-lg font-bold">SaaS</span>
+          </div>
+          <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-default">
+            <iconify-icon icon="solar:smartphone-linear" class="text-2xl"></iconify-icon>
+            <span class="font-bold text-lg">Apps</span>
+          </div>
+          
+           <!-- Duplicate Set -->
+           <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-default">
+            <iconify-icon icon="solar:bolt-linear" class="text-2xl"></iconify-icon>
+            <span class="font-bold text-lg">Workflows</span>
+          </div>
+          <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-default">
+            <iconify-icon icon="solar:server-path-linear" class="text-2xl"></iconify-icon>
+            <span class="font-bold text-lg">APIs</span>
+          </div>
+          <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-default">
+            <iconify-icon icon="simple-icons:n8n" class="text-2xl"></iconify-icon>
+            <span class="font-bold text-lg">n8n</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Bento Grid -->
+    <section id="solutions" class="py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 reveal active">
+          <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white mb-6">
+            Automation + SaaS.
+            <br>
+            <span class="text-zinc-600">Delivered as an app.</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
+          
+          <!-- Large Left Card -->
+          <div class="md:col-span-2 glass-card rounded-3xl p-6 md:p-8 relative overflow-hidden group reveal cursor-pointer active">
+             <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 group-hover:opacity-100 transition-opacity"></div>
+             
+             <div class="relative z-10 flex flex-col h-full">
+                <div class="mb-8">
+                  <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
+                    <iconify-icon icon="solar:layers-minimalistic-linear" width="20"></iconify-icon>
+                  </div>
+                  <h3 class="text-2xl font-bold mb-3">Custom Workflow Automations</h3>
+                  <p class="text-zinc-400 max-w-lg leading-relaxed text-sm md:text-base">
+                    We automate repetitive work across the tools you already use.
+                    <span class="text-white font-medium">Lead handling, data processing, follow-ups, and internal operations</span>,
+                    connected in one workflow built around your business.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mt-6">
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-zinc-300">Connected Workflows</span>
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-zinc-300">Automated Operations</span>
+                  </div>
+                </div>
+
+                <!-- CMS EDITOR SIMULATION -->
+                <div class="mt-auto relative w-full h-48 md:h-64 bg-[#0a0a0a] rounded-t-xl border-t border-x border-white/10 shadow-2xl overflow-hidden translate-y-4 group-hover:translate-y-2 transition-transform duration-500 flex">
+                    <div class="w-32 md:w-48 border-r border-white/5 bg-zinc-900/50 p-4 hidden sm:block">
+                        <div class="h-2 w-20 bg-zinc-700/50 rounded mb-6"></div>
+                        <div class="space-y-3">
+                            <div class="h-6 w-full bg-blue-500/20 rounded border border-blue-500/30"></div>
+                            <div class="h-6 w-3/4 bg-zinc-800 rounded"></div>
+                        </div>
+                    </div>
+                    <div class="flex-1 p-4 md:p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="h-4 w-20 md:w-32 bg-zinc-700/50 rounded"></div>
+                            <div class="px-3 py-1 bg-green-500/20 text-green-400 text-[10px] rounded border border-green-500/20">Workflow Active</div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                             <div class="col-span-2 h-12 md:h-16 rounded bg-zinc-800/30 border border-dashed border-zinc-700 flex items-center justify-center text-xs text-zinc-600">
+                                Automation Dashboard
+                             </div>
+                             <div class="h-16 md:h-24 rounded bg-zinc-800/30 border border-dashed border-zinc-700"></div>
+                             <div class="h-16 md:h-24 rounded bg-zinc-800/30 border border-dashed border-zinc-700"></div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+          </div>
+
+          <!-- Right Column Stack -->
+          <div class="md:col-span-1 flex flex-col gap-6">
+             
+             <!-- Automation Card -->
+             <div class="glass-card rounded-3xl p-6 md:p-8 flex-1 relative overflow-hidden group reveal active" style="transition-delay: 100ms">
+    <!-- Ambient Blur -->
+    <div class="absolute top-0 right-0 p-32 bg-purple-500/10 blur-3xl -z-10 transition-all group-hover:bg-purple-500/20"></div>
+
+    <!-- AI Agent Animation -->
+    <div class="absolute -right-6 top-10 w-52 p-4 bg-[#0A0A0A]/90 border border-white/10 rounded-xl shadow-2xl -rotate-12 translate-x-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 group-hover:-rotate-3 transition-all duration-700 ease-out z-0 pointer-events-none backdrop-blur-sm">
+        <div class="flex items-center gap-2 mb-3 pb-2 border-b border-white/5">
+            <div class="flex gap-1">
+                <div class="w-1.5 h-1.5 rounded-full bg-zinc-700"></div>
+                <div class="w-1.5 h-1.5 rounded-full bg-zinc-700"></div>
+            </div>
+            <div class="text-[8px] text-zinc-600 font-mono ml-auto">AGENT_V1</div>
+        </div>
+        <div class="space-y-2.5">
+            <div class="flex items-center gap-2">
+                <div class="w-5 h-5 rounded-md bg-zinc-800 flex items-center justify-center text-zinc-500">
+                    <iconify-icon icon="solar:user-linear" width="10"></iconify-icon>
+                </div>
+                <div class="h-1.5 w-16 bg-zinc-800 rounded-full"></div>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-5 h-5 rounded-md bg-purple-500/20 flex items-center justify-center text-purple-400">
+                    <iconify-icon icon="solar:stars-minimalistic-linear" width="10"></iconify-icon>
+                </div>
+                <div class="space-y-1.5">
+                    <div class="h-1.5 w-24 bg-purple-500/20 rounded-full animate-pulse"></div>
+                    <div class="h-1.5 w-16 bg-purple-500/20 rounded-full animate-pulse delay-75"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10">
+        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+            <iconify-icon icon="solar:chat-round-line-linear" width="20" class=""></iconify-icon>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">AI Agents</h3>
+        <p class="text-sm text-zinc-400">AI agents that support customers, analyze documents, and manage scheduling around the clock.</p>
+    </div>
+</div>
+
+             <!-- Data Card -->
+             <div class="glass-card rounded-3xl p-6 md:p-8 flex-1 relative overflow-hidden group reveal active" style="transition-delay: 200ms">
+                <div class="absolute bottom-0 left-0 p-32 bg-green-500/5 blur-3xl -z-10 transition-all group-hover:bg-green-500/10"></div>
+                 <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 mb-4">
+                    <iconify-icon icon="solar:server-path-linear" width="20"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold mb-2">SaaS Products &amp; Apps</h3>
+                <p class="text-sm text-zinc-400">Turn your automation into a usable product, with an app interface for your team or customers.</p>
+             </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24 relative border-t border-white/5 bg-black">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <div class="p-8 rounded-3xl border border-white/10 hover:border-purple-500/50 transition-colors duration-300 reveal active">
+               <div class="text-zinc-500 font-mono text-xs mb-4">START</div>
+               <div class="text-3xl font-bold text-white mb-2">Workflow Automation</div>
+               <p class="text-zinc-400 text-sm mb-8">Automate a repetitive process across your existing tools.</p>
+               <ul class="space-y-3 mb-8 text-sm text-zinc-300">
+                   <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-purple-400"></iconify-icon> Custom Workflow Logic</li>
+                   <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-purple-400"></iconify-icon> Tool &amp; API Integrations</li>
+               </ul>
+               <a class="w-full py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition-all font-semibold text-sm" href="https://wa.me/923492971884?text=Hi%20FlowCore!%20I%20would%20like%20to%20discuss%20an%20automation%20project." target="_blank" rel="noopener noreferrer" style="text-align:center;display:flex;align-items:center;justify-content:center">Get a Quote</a>
+           </div>
+           
+           <div class="p-8 rounded-3xl border border-purple-500/30 bg-purple-900/5 relative reveal active" style="transition-delay: 100ms">
+               <div class="absolute top-0 right-0 px-3 py-1 bg-purple-500 text-white text-[10px] font-bold rounded-bl-xl">RECOMMENDED</div>
+               <div class="text-purple-300 font-mono text-xs mb-4">BUSINESS</div>
+               <div class="text-3xl font-bold text-white mb-2">Automation App</div>
+               <p class="text-zinc-400 text-sm mb-8">Your automation delivered through an app your team can use.</p>
+               <ul class="space-y-3 mb-8 text-sm text-zinc-300">
+                   <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-purple-400"></iconify-icon>  App Interface</li>
+                   <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-purple-400"></iconify-icon> Connected Automation</li>
+               </ul>
+               <a class="w-full py-3 rounded-xl bg-white text-black font-semibold text-sm shadow-lg hover:bg-zinc-200 transition-colors" href="https://wa.me/923492971884?text=Hi%20FlowCore!%20I%20would%20like%20to%20discuss%20an%20automation%20project." target="_blank" rel="noopener noreferrer" style="text-align:center;display:flex;align-items:center;justify-content:center">Get Started</a>
+           </div>
+
+           <div class="p-8 rounded-3xl border border-white/10 hover:border-blue-500/50 transition-colors duration-300 reveal active" style="transition-delay: 200ms">
+               <div class="text-zinc-500 font-mono text-xs mb-4">ENTERPRISE</div>
+               <div class="text-3xl font-bold text-white mb-2">SaaS Product</div>
+               <p class="text-zinc-400 text-sm mb-8">Package your automation into a product for your customers.</p>
+               <ul class="space-y-3 mb-8 text-sm text-zinc-300">
+                   <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-purple-400"></iconify-icon> Product Workflows</li>
+                   <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-purple-400"></iconify-icon> Customer App Experience</li>
+               </ul>
+               <a class="w-full py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition-all font-semibold text-sm" href="https://wa.me/923492971884?text=Hi%20FlowCore!%20I%20would%20like%20to%20discuss%20an%20automation%20project." target="_blank" rel="noopener noreferrer" style="text-align:center;display:flex;align-items:center;justify-content:center">Contact Us</a>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form (Airtable Embed Blended) -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-white/[0.02] border-y border-white/5"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row gap-12 items-start">
+                
+                <!-- Left Side Info -->
+                <div class="md:w-1/3 pt-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Let’s Build<br>Something Great</h2>
+                    <p class="text-zinc-400 mb-8">Tell us what you want to automate. Send your project details on WhatsApp or email to discuss the next steps.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex text-sm text-zinc-300 gap-x-3 gap-y-3 items-center"><a class="break-all hover:text-white" href="https://mail.google.com/mail/?view=cm&fs=1&to=fawadnaseem28%40gmail.com&su=FlowCore%20%E2%80%94%20Project%20Inquiry">fawadnaseem28@gmail.com</a></div>
+                        <div class="flex items-center gap-3 text-sm text-zinc-300">
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-purple-400">
+                                <iconify-icon icon="solar:phone-linear"></iconify-icon>
+                            </div>
+                            <a href="https://wa.me/923492971884?text=Hi%20FlowCore!%20I%20would%20like%20to%20discuss%20an%20automation%20project." target="_blank" rel="noopener noreferrer">+92 349 2971884</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Embed -->
+                <div class="md:w-2/3 w-full">
+                    <div class="glass-card p-2 rounded-3xl border border-white/10 shadow-2xl relative">
+                        <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-purple-500/5 to-transparent rounded-3xl pointer-events-none"></div>
+                        <!-- Blended Airtable Container -->
+                        <div class="w-full min-h-[650px] rounded-2xl overflow-hidden bg-[#111]">
+                            <form id="project-form" class="p-6 md:p-10 flex flex-col gap-5 h-full" aria-label="Project inquiry">
+ <h3 class="text-2xl font-semibold">Tell us about your project</h3>
+ <div class="grid sm:grid-cols-2 gap-5"><label class="text-sm text-zinc-300">First name<input name="firstName" required autocomplete="given-name" class="contact-input" placeholder="Your first name"></label><label class="text-sm text-zinc-300">Last name<input name="lastName" autocomplete="family-name" class="contact-input" placeholder="Your last name"></label></div>
+ <label class="text-sm text-zinc-300">Email<input name="email" required type="email" autocomplete="email" class="contact-input" placeholder="you@company.com"></label>
+ <label class="text-sm text-zinc-300">Phone <span class="text-zinc-500">(optional)</span><input name="phone" type="tel" autocomplete="tel" class="contact-input" placeholder="Include your country code"></label>
+ <label class="text-sm text-zinc-300">What would you like to automate?<textarea name="message" required rows="3" class="contact-input" placeholder="Tell us about your business, tools, and project."></textarea></label>
+ <div class="flex flex-col sm:flex-row gap-3"><button type="submit" class="px-6 py-3 rounded-xl bg-white text-black text-sm font-semibold">Continue on WhatsApp</button><button type="submit" name="channel" value="email" class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-semibold">Continue by Email</button></div>
+ <p class="text-xs text-zinc-500">Opens a draft in WhatsApp or Gmail. You review and send it.</p>
+ </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-black">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="#" class="flowcore-home" aria-label="FlowCore home"><svg class="flowcore-brand" viewBox="150 125 1780 490" role="img" aria-label="FlowCore"><image href="flowcore-brand.png" width="2071" height="759" filter="url(#remove-logo-black)"/></svg></a>
+        <div class="flex gap-6"><a href="https://wa.me/923492971884?text=Hi%20FlowCore!%20I%20would%20like%20to%20discuss%20an%20automation%20project." target="_blank" rel="noopener noreferrer" aria-label="Contact FlowCore on WhatsApp" class="text-zinc-400 hover:text-white"><iconify-icon icon="simple-icons:whatsapp" width="22"></iconify-icon></a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=fawadnaseem28%40gmail.com&su=FlowCore%20%E2%80%94%20Project%20Inquiry" aria-label="Email FlowCore" class="text-zinc-400 hover:text-white"><iconify-icon icon="solar:letter-linear" width="22"></iconify-icon></a></div></div></footer>
+
+    <script>
+      // Mobile Menu Logic
+      const menuBtn = document.getElementById('menu-btn');
+      const closeBtn = document.getElementById('close-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      function toggleMenu() {
+          const isClosed = mobileMenu.classList.contains('translate-x-full');
+          if (isClosed) {
+              mobileMenu.classList.remove('translate-x-full'); mobileMenu.setAttribute('aria-hidden','false');menuBtn.setAttribute('aria-expanded','true');closeBtn.focus();
+              document.body.style.overflow = 'hidden'; // Prevent scrolling
+          } else {
+              mobileMenu.classList.add('translate-x-full');mobileMenu.setAttribute('aria-hidden','true');menuBtn.setAttribute('aria-expanded','false');menuBtn.focus();
+              document.body.style.overflow = '';
+          }
+      }
+
+      menuBtn.addEventListener('click', toggleMenu);
+      closeBtn.addEventListener('click', toggleMenu);
+      
+      mobileLinks.forEach(link => {
+          link.addEventListener('click', toggleMenu);
+      });
+
+      // Scroll Reveal
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+      // Dynamic Title
+      const originalTitle = document.title;
+      window.addEventListener('blur', () => { document.title = 'FlowCore | Let’s Automate'; });
+      window.addEventListener('focus', () => { document.title = originalTitle; });
+    </script>
+
+<script>
+document.addEventListener('keydown',function(e){if(mobileMenu.getAttribute('aria-hidden')!=='false')return;if(e.key==='Escape')toggleMenu();if(e.key==='Tab'){const items=mobileMenu.querySelectorAll('button,a');const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+document.getElementById('project-form').addEventListener('submit',function(e){e.preventDefault();const d=new FormData(this);const message='Hi FlowCore!\n\nName: '+d.get('firstName')+' '+d.get('lastName')+'\nEmail: '+d.get('email')+'\nPhone: '+d.get('phone')+'\n\nProject: '+d.get('message');const email=e.submitter&&e.submitter.value==='email';const url=email?'https://mail.google.com/mail/?view=cm&fs=1&to=fawadnaseem28%40gmail.com&su=FlowCore%20Project%20Inquiry&body='+encodeURIComponent(message):'https://wa.me/923492971884?text='+encodeURIComponent(message);window.open(url,'_blank','noopener,noreferrer');});
+</script></body></html>
