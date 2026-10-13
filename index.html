@@ -123,7 +123,15 @@ transform: translateY(0) scale(1);
 
 
 
-<!-- Ambient Live Background (pre-blurred gradients — no live blur filters) -->
+<!-- Background (component) added by Aura — tuned: reduced render scale, capped fps, lazy load -->
+<div class="aura-background-component fixed top-0 w-full h-screen -z-10" data-alpha-mask="80" style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"><div class="aura-background-component top-0 w-full h-screen -z-10 absolute" data-alpha-mask="100" style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 100%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 100%, transparent)">
+  <div data-us-project="ZPruWnhzwuk5Tf6nc1q0" data-us-scale="0.6" data-us-dpi="1" data-us-fps="30" data-us-lazyload="true" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+  <script type="text/javascript">
+    !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+  </script>
+</div></div>
+
+    <!-- Ambient Live Background (pre-blurred gradients — no live blur filters) -->
     <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
         <div class="bg-blob absolute top-[-10%] left-[-10%] w-[400px] md:w-[700px] h-[400px] md:h-[700px]" style="background:radial-gradient(circle, rgba(88,28,135,0.25) 0%, rgba(88,28,135,0) 65%)"></div>
         <div class="bg-blob absolute bottom-[-10%] right-[-10%] w-[400px] md:w-[700px] h-[400px] md:h-[700px]" style="background:radial-gradient(circle, rgba(30,58,138,0.25) 0%, rgba(30,58,138,0) 65%); animation-delay: 2s"></div>
